@@ -1,0 +1,14 @@
+name: dartins
+description: Cordova pugin definitions for use in Dart projects
+version: 0.0.1
+author: Nathan Kerr <email@example.com>
+#homepage: https://www.example.com
+
+environment:
+  sdk: '>=1.0.0 <2.0.0'
+
+dependencies:
+  js: "0.6.0"
+
+dev_dependencies:
+  test: '>=0.12.0 <0.13.0'
