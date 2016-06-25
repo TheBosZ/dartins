@@ -13,9 +13,11 @@ class Store {
 	static const int DEBUG = 4;
 
 	external static int get verbosity;
+
 	external static set verbosity(int v);
 
 	external static String get validator;
+
 	external static set validator(String v);
 
 	external static List<StoreProduct> get products;
@@ -42,25 +44,39 @@ class StoreProduct {
 	static const String NON_CONSUMABLE = "non consumable";
 
 	external String get id;
+
 	external set id(String v);
 
 	external String get alias;
+
 	external set alias(String v);
 
 	external String get type;
+
 	external set type(String v);
 
 	external bool get canPurchase;
+
 	external String get currency;
+
 	external String get description;
+
 	external bool get downloaded;
+
 	external bool get downloading;
+
 	external bool get loaded;
+
 	external bool get owned;
+
 	external String get price;
+
 	external String get state;
+
 	external String get title;
+
 	external String get transaction;
+
 	external bool get valid;
 
 	external finish();
@@ -76,10 +92,16 @@ class StoreProduct {
 class ProductEvent {
 
 	external loaded(Function v);
+
 	external updated(Function v);
+
 	external approved(Function v);
+
 	external error(Function v);
+
 	external owned(Function v);
+
 	external cancelled(Function v);
+
 	external refunded(Function v);
 }

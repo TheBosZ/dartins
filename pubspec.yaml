@@ -1,8 +1,7 @@
 name: dartins
-description: Cordova pugin definitions for use in Dart projects
-version: 0.0.1
-author: Nathan Kerr <email@example.com>
-#homepage: https://www.example.com
+description: Cordova plugin definitions for use in Dart projects
+version: 0.0.2
+author: Nathan Kerr <nathanker@gmail.com>
 
 environment:
   sdk: '>=1.0.0 <2.0.0'
