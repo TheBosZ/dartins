@@ -6,3 +6,4 @@ export 'src/device.dart';
 export 'src/google_analytics.dart';
 export 'src/store.dart';
 export 'src/splashscreen.dart';
+export 'src/inapp_browser.dart';

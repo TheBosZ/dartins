@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.3
+
+- Add support for the In-app Browser plugin
+
 ## 0.0.2
 
 - Added support for Google Analytics and Splashscreen plugins.

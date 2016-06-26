@@ -37,6 +37,14 @@ Generally speaking, any interactions with plugins should happen **after** the "d
  * setUserId(String id);
  * debugMode();
  * enableUncaughtExceptionReporting(bool enable,  [Function success, Function error]);
+* [In-app Browser](https://github.com/apache/cordova-plugin-inappbrowser)
+ * InappBrowser open(String url, String target, [String options]);
+ * addEventListener(String eventname, Function cb);
+ * removeEventListener(String eventname, Function cb);
+ * close();
+ * show();
+ * executeScript(InjectDetails details, Function cb);
+ * insertCSS(InjectDetails details, Function cb);
 
 
 ## Usage
@@ -78,6 +86,11 @@ main() {
         GoogleAnalytics.startTrackerWithId('xxx-xxx');
         GoogleAnalytics.trackView('mainMenu');
         GoogleAnalytics.trackEvent('AppState', 'started');
+
+        //In-app browser example
+        InappBrowser iab = InappBrowser.open('http://google.com', InappBrowser.TARGET_BLANK);
+        iab.show();
+        iab.close();
 	});
 }
 ```
