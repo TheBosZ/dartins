@@ -2,7 +2,7 @@
 
 Cordova pugin definitions for use in Dart projects.
 
-Generally speaking, any interactions with plugins should happen **after** the "deviceReady" event has fired. See example for a simple implementation.
+Generally speaking, any interactions with plugins should happen **after** the "deviceReady" event has fired. See [example](#usage) for a simple implementation.
 
 ## Supported plugins
 * [Device](https://github.com/apache/cordova-plugin-device)
@@ -45,7 +45,18 @@ Generally speaking, any interactions with plugins should happen **after** the "d
  * show();
  * executeScript(InjectDetails details, Function cb);
  * insertCSS(InjectDetails details, Function cb);
+* [Amazon Mobile Ads](https://developer.amazon.com/public/apis/earn/mobile-ads/cordova/implementing-mobile-ads-with-the-mobile-ads-plugin-for-cordova)
+ * See additional [notes below](#amazon-ads-specific-notes)
+ * All ad methods are supported.
+ * Events are **not** supported yet
 
+## Amazon Ads Specific Notes
+
+Amazon doesn't make it easy to integrate Cordova with their ad platform but here's some notes.
+
+With this package, there is a "AmazonAds" class that has a developer-friendly interface to the plugin. You should see if that meets your needs before going directly to the methods in "amazon_mobile_ads.dart".
+
+To install the plugin, you'll have to download it from Amazon and install it manually. It's not in npm (so you can't do ```cordova plugin add <>```)
 
 ## Usage
 

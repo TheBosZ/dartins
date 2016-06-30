@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.4
+
+- Added partial support for Amazon Ads plugin (no support for events yet)
+
 ## 0.0.3
 
 - Add support for the In-app Browser plugin
