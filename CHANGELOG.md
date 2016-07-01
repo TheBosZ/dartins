@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.5
+
+- Added missing Device properties
+
 ## 0.0.4
 
 - Added partial support for Amazon Ads plugin (no support for events yet)
