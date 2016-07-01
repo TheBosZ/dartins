@@ -1,6 +1,6 @@
 # Dartins
 
-[Cordova](https://cordova.apache.org/)/(PhoneGap)[http://phonegap.com/] plugin definitions for use in Dart projects.
+[Cordova](https://cordova.apache.org/)/[PhoneGap](http://phonegap.com/) plugin definitions for use in Dart projects.
 
 Generally speaking, any interactions with plugins should happen **after** the "deviceReady" event has fired. See [example](#usage) for a simple implementation.
 
