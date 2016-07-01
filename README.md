@@ -54,7 +54,7 @@ Generally speaking, any interactions with plugins should happen **after** the "d
 * [Amazon Mobile Ads](https://developer.amazon.com/public/apis/earn/mobile-ads/cordova/implementing-mobile-ads-with-the-mobile-ads-plugin-for-cordova)
     * See additional [notes below](#amazon-ads-specific-notes)
     * All ad methods are supported.
-    * Events are **not** supported yet
+    * Events are supported
 
 ## Amazon Ads Specific Notes
 

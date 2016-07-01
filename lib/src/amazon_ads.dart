@@ -16,6 +16,13 @@ class AmazonAds {
 	static const String FIT_SCREEN_WIDTH = 'FIT_SCREEN_WIDTH';
 	static const String FIT_AD_SIZE = 'FIT_AD_SIZE';
 
+	static const String EVENT_AD_COLLAPSED = 'adCollapsed';
+	static const String EVENT_AD_DISMISSED = 'adDismissed';
+	static const String EVENT_AD_EXPANDED = 'adExpanded';
+	static const String EVENT_AD_FAILED_TO_LOAD = 'adFailedToLoad';
+	static const String EVENT_AD_LOADED = 'adLoaded';
+	static const String EVENT_AD_RESIZED = 'adResized';
+
 	static Future setApplicationKey(String key) {
 		var completer = new Completer();
 		AmazonMobileAds.setApplicationKey(
@@ -174,5 +181,9 @@ class AmazonAds {
 			}),
 			[new AdPair(adOne: adOne, adTwo: adTwo)]);
 		return completer.future;
+	}
+
+	static void addListener(String event, Function s) {
+		AmazonMobileAds.addListener(event, allowInterop(s));
 	}
 }

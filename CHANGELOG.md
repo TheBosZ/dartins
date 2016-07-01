@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.6
+
+- Added event support for Amazon Ads
+
 ## 0.0.5
 
 - Added missing Device properties

@@ -6,6 +6,13 @@ import 'package:js/js.dart';
 @JS('window.AmazonMobileAds')
 class AmazonMobileAds {
 
+	static const String EVENT_AD_COLLAPSED = 'adCollapsed';
+	static const String EVENT_AD_DISMISSED = 'adDismissed';
+	static const String EVENT_AD_EXPANDED = 'adExpanded';
+	static const String EVENT_AD_FAILED_TO_LOAD = 'adFailedToLoad';
+	static const String EVENT_AD_LOADED = 'adLoaded';
+	static const String EVENT_AD_RESIZED = 'adResized';
+
 	external static void setApplicationKey(Function success, Function error, List<ApplicationKey> v);
 	external static void registerApplication(Function success, Function error, List v);
 	external static void enableLogging(Function success, Function error, List<ShouldEnable> v);
@@ -19,6 +26,8 @@ class AmazonMobileAds {
 	external static void closeFloatingBannerAd(Function success, Function error, List<Ad> v);
 	external static void isInterstitialAdReady(Function success, Function error, List v);
 	external static void areAdsEqual(Function success, Function error, List<AdPair> v);
+
+	external static void addListener(String event, Function handler);
 }
 
 @JS()
