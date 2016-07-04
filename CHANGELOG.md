@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.6+1
+
+- Return types for non-void methods. Unwraps all "booleanValue" results to straight booleans.
+
 ## 0.0.6
 
 - Added event support for Amazon Ads

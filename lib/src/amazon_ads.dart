@@ -85,7 +85,7 @@ class AmazonAds {
 		return completer.future;
 	}
 
-	static Future createFloatingBannerAd(
+	static Future<Ad> createFloatingBannerAd(
 		{String dock, String horizontalAlign, String adFit}) {
 		var completer = new Completer();
 		AmazonMobileAds.createFloatingBannerAd(
@@ -100,7 +100,7 @@ class AmazonAds {
 		return completer.future;
 	}
 
-	static Future createInterstitialAd() {
+	static Future<Ad> createInterstitialAd() {
 		var completer = new Completer();
 		AmazonMobileAds.createInterstitialAd(
 			allowInterop((var res) {
@@ -112,11 +112,11 @@ class AmazonAds {
 		return completer.future;
 	}
 
-	static Future loadAndShowFloatingBannerAd(Ad ad) {
+	static Future<bool> loadAndShowFloatingBannerAd(Ad ad) {
 		var completer = new Completer();
 		AmazonMobileAds.loadAndShowFloatingBannerAd(
 			allowInterop((var res) {
-				completer.complete(res);
+				completer.complete(res.booleanValue);
 			}),
 			allowInterop((var res) {
 				completer.completeError(res);
@@ -124,11 +124,11 @@ class AmazonAds {
 		return completer.future;
 	}
 
-	static Future loadInterstitialAd() {
+	static Future<bool> loadInterstitialAd() {
 		var completer = new Completer();
 		AmazonMobileAds.loadInterstitialAd(
 			allowInterop((var res) {
-				completer.complete(res);
+				completer.complete(res.booleanValue);
 			}),
 			allowInterop((var res) {
 				completer.completeError(res);
@@ -136,11 +136,11 @@ class AmazonAds {
 		return completer.future;
 	}
 
-	static Future showInterstitialAd() {
+	static Future<bool> showInterstitialAd() {
 		var completer = new Completer();
 		AmazonMobileAds.showInterstitialAd(
 			allowInterop((var res) {
-				completer.complete(res);
+				completer.complete(res.booleanValue);
 			}),
 			allowInterop((var res) {
 				completer.completeError(res);
