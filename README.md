@@ -55,6 +55,8 @@ Generally speaking, any interactions with plugins should happen **after** the "d
     * See additional [notes below](#amazon-ads-specific-notes)
     * All ad methods are supported.
     * Events are supported
+* [Statusbar](https://github.com/apache/cordova-plugin-statusbar)
+    * All methods and properties supported
 
 ## Amazon Ads Specific Notes
 

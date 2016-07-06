@@ -4,6 +4,10 @@
 
 - Return types for non-void methods. Unwraps all "booleanValue" results to straight booleans.
 
+## 0.0.7
+
+- Added support for the Statusbar plugin
+
 ## 0.0.6
 
 - Added event support for Amazon Ads
