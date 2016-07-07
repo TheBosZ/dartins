@@ -86,7 +86,7 @@ class AmazonAds {
 	}
 
 	static Future<Ad> createFloatingBannerAd(
-		{String dock, String horizontalAlign, String adFit}) {
+		{String dock: AmazonAds.DOCK_BOTTOM, String horizontalAlign: AmazonAds.ALIGN_CENTER, String adFit: AmazonAds.FIT_SCREEN_WIDTH}) {
 		var completer = new Completer();
 		AmazonMobileAds.createFloatingBannerAd(
 			allowInterop((var res) {
