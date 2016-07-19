@@ -57,6 +57,9 @@ Generally speaking, any interactions with plugins should happen **after** the "d
     * Events are supported
 * [Statusbar](https://github.com/apache/cordova-plugin-statusbar)
     * All methods and properties supported
+* [Facebook](https://github.com/jeduan/cordova-plugin-facebook4)
+    * All methods supported
+    * [Facebook's official plugin](https://github.com/Wizcorp/phonegap-facebook-plugin) has been abandoned, this plugin is an active, up-to-date fork.
 
 ## Amazon Ads Specific Notes
 

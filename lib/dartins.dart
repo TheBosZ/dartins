@@ -10,3 +10,4 @@ export 'src/inapp_browser.dart';
 export 'src/amazon_mobile_ads.dart';
 export 'src/amazon_ads.dart';
 export 'src/statusbar.dart';
+export 'src/facebook.dart';

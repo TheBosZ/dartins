@@ -1,12 +1,16 @@
 # Changelog
 
-## 0.0.6+1
+## 0.0.8
 
-- Return types for non-void methods. Unwraps all "booleanValue" results to straight booleans.
+- Added support for the Facebook plugin
 
 ## 0.0.7
 
 - Added support for the Statusbar plugin
+
+## 0.0.6+1
+
+- Return types for non-void methods. Unwraps all "booleanValue" results to straight booleans.
 
 ## 0.0.6
 
