@@ -3,6 +3,7 @@
 ## 0.0.8+1
 
 - Added Facebook library that hides plugin API.
+- Moved Amazon helper library to same file to make things simpler.
 
 ## 0.0.8
 
