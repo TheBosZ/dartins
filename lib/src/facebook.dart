@@ -3,12 +3,16 @@ library facebook;
 
 import 'package:js/js.dart';
 import 'dart:async';
+import 'dart:js';
+import 'dart:convert';
 
 class Facebook {
-	static Future login(List<String> perms) {
+	static Future<Map> login(List<String> perms) {
 		Completer c = new Completer();
 		FacebookApi.login(perms, allowInterop((var result){
-			c.complete(result);
+			var obj = JSON.decode(context['JSON'].callMethod('stringify', [result]));
+
+			c.complete(obj['o']);
 		}), allowInterop((var result){
 			c.completeError(result);
 		}));
@@ -25,10 +29,12 @@ class Facebook {
 		return c.future;
 	}
 
-	static Future getLoginStatus() {
+	static Future<Map> getLoginStatus() {
 		Completer c = new Completer();
 		FacebookApi.getLoginStatus(allowInterop((var result){
-			c.complete(result);
+			var obj = JSON.decode(context['JSON'].callMethod('stringify', [result]));
+
+			c.complete(obj['o']);
 		}), allowInterop((var result){
 			c.completeError(result);
 		}));
@@ -45,10 +51,12 @@ class Facebook {
 		return c.future;
 	}
 
-	static Future api(String requestPath, List<String> perms) {
+	static Future<Map> api(String requestPath, List<String> perms) {
 		Completer c = new Completer();
 		FacebookApi.api(requestPath, perms, allowInterop((var result){
-			c.complete(result);
+			var obj = JSON.decode(context['JSON'].callMethod('stringify', [result]));
+
+			c.complete(obj['o']);
 		}), allowInterop((var result){
 			c.completeError(result);
 		}));
