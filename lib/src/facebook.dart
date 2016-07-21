@@ -2,9 +2,110 @@
 library facebook;
 
 import 'package:js/js.dart';
+import 'dart:async';
+
+class Facebook {
+	static Future login(List<String> perms) {
+		Completer c = new Completer();
+		FacebookApi.login(perms, allowInterop((var result){
+			c.complete(result);
+		}), allowInterop((var result){
+			c.completeError(result);
+		}));
+		return c.future;
+	}
+
+	static Future logout(){
+		Completer c = new Completer();
+		FacebookApi.logout(allowInterop((var result){
+			c.complete(result);
+		}), allowInterop((var result){
+			c.completeError(result);
+		}));
+		return c.future;
+	}
+
+	static Future getLoginStatus() {
+		Completer c = new Completer();
+		FacebookApi.getLoginStatus(allowInterop((var result){
+			c.complete(result);
+		}), allowInterop((var result){
+			c.completeError(result);
+		}));
+		return c.future;
+	}
+
+	static Future showDialog(DialogOptions options){
+		Completer c = new Completer();
+		FacebookApi.showDialog(options, allowInterop((var result){
+			c.complete(result);
+		}), allowInterop((var result){
+			c.completeError(result);
+		}));
+		return c.future;
+	}
+
+	static Future api(String requestPath, List<String> perms) {
+		Completer c = new Completer();
+		FacebookApi.api(requestPath, perms, allowInterop((var result){
+			c.complete(result);
+		}), allowInterop((var result){
+			c.completeError(result);
+		}));
+		return c.future;
+	}
+
+	static Future logEvent(String name, Object params, num valueToSum) {
+		Completer c = new Completer();
+		FacebookApi.logEvent(name, params, valueToSum, allowInterop((var result){
+			c.complete(result);
+		}), allowInterop((var result){
+			c.completeError(result);
+		}));
+		return c.future;
+	}
+
+	static Future logPurchase(num value, String currency) {
+		Completer c = new Completer();
+		FacebookApi.logPurchase(value, currency, allowInterop((var result){
+			c.complete(result);
+		}), allowInterop((var result){
+			c.completeError(result);
+		}));
+		return c.future;
+	}
+
+	static Future activateApp() {
+		Completer c = new Completer();
+		FacebookApi.activateApp(allowInterop((var result){
+			c.complete(result);
+		}), allowInterop((var result){
+			c.completeError(result);
+		}));
+		return c.future;
+	}
+
+	static Future appInvite(Object options) {
+		Completer c = new Completer();
+		FacebookApi.appInvite(options, allowInterop((var result){
+			c.complete(result);
+		}), allowInterop((var result){
+			c.completeError(result);
+		}));
+		return c.future;
+	}
+
+	static Future browserInit(String appId, [String version = null]) {
+		Completer c = new Completer();
+		FacebookApi.browserInit(appId, version, allowInterop((var result){
+			c.complete(result);
+		}));
+		return c.future;
+	}
+}
 
 @JS('facebookConnectPlugin')
-class Facebook {
+class FacebookApi {
 	external static login(List<String> perms, Function success, Function failure);
 	external static logout(Function success, Function failure);
 	external static getLoginStatus(Function success, Function failure);
@@ -14,7 +115,7 @@ class Facebook {
 	external static logPurchase(num value, String currency, Function success, Function failure);
 	external static activateApp(Function success, Function failure);
 	external static appInvite(Object options, Function success, Function failure);
-	external static browserInit(String appId);
+	external static browserInit(String appId, [String version = null, Function success]);
 }
 
 @JS()

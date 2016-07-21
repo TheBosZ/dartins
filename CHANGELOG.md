@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.8+1
+
+- Added Facebook library that hides plugin API.
+
 ## 0.0.8
 
 - Added support for the Facebook plugin
