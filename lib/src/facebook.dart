@@ -7,12 +7,13 @@ import 'dart:js';
 import 'dart:convert';
 
 class Facebook {
+
+
 	static Future<Map> login(List<String> perms) {
 		Completer c = new Completer();
 		FacebookApi.login(perms, allowInterop((var result){
-			var obj = JSON.decode(context['JSON'].callMethod('stringify', [result]));
-
-			c.complete(obj['o']);
+			Map obj = JSON.decode(context['JSON'].callMethod('stringify', [result]));
+			c.complete(Facebook._processResult(obj));
 		}), allowInterop((var result){
 			c.completeError(result);
 		}));
@@ -34,7 +35,7 @@ class Facebook {
 		FacebookApi.getLoginStatus(allowInterop((var result){
 			var obj = JSON.decode(context['JSON'].callMethod('stringify', [result]));
 
-			c.complete(obj['o']);
+			c.complete(Facebook._processResult(obj));
 		}), allowInterop((var result){
 			c.completeError(result);
 		}));
@@ -56,7 +57,7 @@ class Facebook {
 		FacebookApi.api(requestPath, perms, allowInterop((var result){
 			var obj = JSON.decode(context['JSON'].callMethod('stringify', [result]));
 
-			c.complete(obj['o']);
+			c.complete(Facebook._processResult(obj));
 		}), allowInterop((var result){
 			c.completeError(result);
 		}));
@@ -109,6 +110,13 @@ class Facebook {
 			c.complete(result);
 		}));
 		return c.future;
+	}
+
+	static Map _processResult(Map obj) {
+		if (obj.containsKey('o')) {
+			return obj['o'];
+		}
+		return obj;
 	}
 }
 

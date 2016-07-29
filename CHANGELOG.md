@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.8+2
+
+- Facebook SDK on iOS returns a different structure than Android
+
 ## 0.0.8+1
 
 - Added Facebook library that hides plugin API.
