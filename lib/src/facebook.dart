@@ -161,7 +161,10 @@ class DialogOptions {
 		String caption,
 		String description,
 		String picture,
-		bool share_feedWeb: false
+		bool share_feedWeb: false,
+		bool share_sheet: false,
+		bool share_feedBrowser: false,
+		bool share_native: false
 	});
 }
 

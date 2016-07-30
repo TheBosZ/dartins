@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.8+3
+
+- Added missing share options for iOS
+
 ## 0.0.8+2
 
 - Facebook SDK on iOS returns a different structure than Android
