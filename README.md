@@ -17,14 +17,12 @@ Generally speaking, any interactions with plugins should happen **after** the "d
 * [Splashscreen](https://github.com/apache/cordova-plugin-splashscreen)
     * show();
     * hide();
-* [AdMob (Pro Version)](https://github.com/floatinghotpot/cordova-admob-pro)
-    * createBanner(BannerOptions options);
-    * hideBanner();
-    * showBanner(int position);
-    * showBannerAtXY(int x, int y);
-    * removeBanner();
-    * prepareInterstitial(InterstitialOptions options);
-    * showInterstitial();
+* AdMob Pro - **Note!** This plugin takes 2% of your revenue if you don't buy a license. For this reason, I'm deprecating support for it
+    * Please see the next section on a replacement
+* [AdMob - forked from AppFeel](https://github.com/TheBosZ/admob-google-cordova)
+    * Forked to remove 2% revenue stealing
+    * Will be kept up to date as necessary
+    * To install, simply run: `cordova plugin add https://github.com/TheBosZ/admob-google-cordova.git --save`
 * [In-app Purchase](https://github.com/j3k0/cordova-plugin-purchase)
     * ProductEvent when(String v);
     * refresh();
@@ -60,6 +58,7 @@ Generally speaking, any interactions with plugins should happen **after** the "d
 * [Facebook](https://github.com/jeduan/cordova-plugin-facebook4)
     * All methods supported
     * [Facebook's official plugin](https://github.com/Wizcorp/phonegap-facebook-plugin) has been abandoned, this plugin is an active, up-to-date fork.
+    * To support every option, please use at least version 1.7.2
 
 ## Amazon Ads Specific Notes
 

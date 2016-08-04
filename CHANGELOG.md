@@ -1,8 +1,18 @@
 # Changelog
 
+## 0.1.0
+
+- BREAKING CHANGE: The AdMob Pro plugin forces a 2% donation, as a result, I'm deprecating the API. It's now called "AdMobPro". Please see the file for additional changes.
+- NEW: Added support for my forked version of another AdMob plugin. See the Readme for details on the plugin.
+- Includes more "Dart like" library. See src/admob.dart for details.
+
+## 0.0.8+4
+ 
+- Added "quote" field for Share dialog. Requires version 1.7.2 of the plugin.
+
 ## 0.0.8+3
 
-- Added missing share options for iOS
+- Added missing share options for Facebook iOS
 
 ## 0.0.8+2
 
