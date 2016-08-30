@@ -59,6 +59,9 @@ Generally speaking, any interactions with plugins should happen **after** the "d
     * All methods supported
     * [Facebook's official plugin](https://github.com/Wizcorp/phonegap-facebook-plugin) has been abandoned, this plugin is an active, up-to-date fork.
     * To support every option, please use at least version 1.7.2
+* [App Settings](https://github.com/mkliu/cordova-plugin-appsettings)
+    * Fully supported
+    * AppSettingsHelper class to provide ease-of-use
 
 ## Amazon Ads Specific Notes
 

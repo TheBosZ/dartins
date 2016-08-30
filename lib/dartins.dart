@@ -11,3 +11,4 @@ export 'src/inapp_browser.dart';
 export 'src/amazon_mobile_ads.dart';
 export 'src/statusbar.dart';
 export 'src/facebook.dart';
+export 'src/app_settings.dart';

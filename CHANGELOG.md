@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- Added support for App Settings plugin
+
 ## 0.1.0
 
 - BREAKING CHANGE: The AdMob Pro plugin forces a 2% donation, as a result, I'm deprecating the API. It's now called "AdMobPro". Please see the file for additional changes.
