@@ -71,6 +71,38 @@ With this package, there is a "AmazonAds" class that has a developer-friendly in
 
 To install the plugin, you'll have to download it from Amazon and install it manually. It's not in npm (so you can't do ```cordova plugin add <>```)
 
+## Installation
+
+Edit your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  dartins: ^0.1.1
+```
+
+Then run `pub get`
+
+## Dependencies
+
+The only dependencies outside of Dart are the plugins themselves. You only need to install the plugins you wish to use.
+
+For example, if you want to use the Admob and Device plugins, but no others, simply run:
+
+```bash
+cordova plugin add https://github.com/TheBosZ/admob-google-cordova.git --save
+cordova plugin add cordova-plugin-device --save
+```
+
+## Compilation
+
+To build for Cordova/PhoneGap, the steps are as follows:
+
+1. Run `pub build`
+2. Copy the contents of the `build` folder into the `www` folder in your Cordova project
+3. Run `cordova run android` (substitute the Cordova command for what your desired setup).
+
+If you're using PhoneGap Build, you don't need any extra setup to be able to use this package. Just do steps 1 and 2 and then submit your build (make sure you set up the plugins correctly!).
+
 ## Usage
 
 A simple usage example:
