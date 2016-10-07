@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2
+
+- Added support for the Network Information plugin
+
 ## 0.1.1
 
 - Added support for App Settings plugin

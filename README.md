@@ -62,6 +62,10 @@ Generally speaking, any interactions with plugins should happen **after** the "d
 * [App Settings](https://github.com/mkliu/cordova-plugin-appsettings)
     * Fully supported
     * AppSettingsHelper class to provide ease-of-use
+* [Network Information](https://github.com/apache/cordova-plugin-network-information)
+	* Fully supported
+	* Connection types are available on ConnectionTypes
+	* Event names are constants in the connection class
 
 ## Amazon Ads Specific Notes
 
