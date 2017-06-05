@@ -16,7 +16,7 @@ class AppSettingsHelper {
 		Completer c = new Completer();
 		AppSettings.get(allowInterop((var result){
 			Map obj = JSON.decode(context['JSON'].callMethod('stringify', [result]));
-			print(obj);
+//			print(obj);
 			if (obj.containsKey('o')) {
 				obj = obj['o'];
 			}
