@@ -14,3 +14,4 @@ export 'src/facebook.dart';
 export 'src/app_settings.dart';
 export 'src/network_information.dart';
 export 'src/av_audio_session_adapter.dart';
+export 'src/code_push.dart';
