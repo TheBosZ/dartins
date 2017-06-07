@@ -3,6 +3,8 @@ library code_push;
 
 import 'package:js/js.dart';
 import 'dart:async';
+import 'dart:js';
+import 'dart:convert';
 
 @JS('codePush')
 class CodePushApi {
@@ -22,10 +24,26 @@ class CodePush {
 	static Future getCurrentPackage() {
 		Completer c = new Completer();
 		CodePushApi.getCurrentPackage(allowInterop((result, [extra = null]) {
-			if (extra != null) {
-				print(extra);
+			Map obj = JSON.decode(context['JSON'].callMethod('stringify', [result]));
+			if (obj.containsKey('o')) {
+				obj = obj['o'];
 			}
-			c.complete(result);
+			c.complete(obj);
+		}), allowInterop((error) {
+			c.completeError(error);
+		}));
+
+		return c.future;
+	}
+
+	static Future getPendingPackage() {
+		Completer c = new Completer();
+		CodePushApi.getPendingPackage(allowInterop((result, [extra = null]) {
+			Map obj = JSON.decode(context['JSON'].callMethod('stringify', [result]));
+			if (obj.containsKey('o')) {
+				obj = obj['o'];
+			}
+			c.complete(obj);
 		}), allowInterop((error) {
 			c.completeError(error);
 		}));
@@ -36,14 +54,53 @@ class CodePush {
 	static Future sync([Map<dynamic, dynamic> options = null]) {
 		Completer c = new Completer();
 		CodePushApi.sync(allowInterop((result) {
-			print('got a result from sync');
-			print(result);
 			if (!c.isCompleted) {
 				c.complete(result);
 			}
 		}), {}, allowInterop((progress) {
 
 		}));
+
 		return c.future;
+	}
+
+	static Future checkForUpdate([String deploymentKey = null]) {
+		Completer c = new Completer();
+
+		CodePushApi.checkForUpdate(allowInterop((result) {
+			if (!c.isCompleted) {
+				c.complete(result);
+			}
+		}), allowInterop((error) {
+			c.completeError(error);
+		}), deploymentKey);
+
+		return c.future;
+	}
+
+	static void restartApplication() {
+		CodePushApi.restartApplication();
+	}
+
+	static Future notifyApplicationReady() {
+		Completer c = new Completer();
+
+		CodePushApi.notifyApplicationReady(allowInterop((result) {
+			if (!c.isCompleted) {
+				c.complete(result);
+			}
+		}), allowInterop((error) {
+			c.completeError(error);
+		}));
+
+		return c.future;
+	}
+
+	static dynamic getDefaultSyncOptions() {
+		return CodePushApi.getDefaultSyncOptions();
+	}
+
+	static dynamic getDefaultUpdateDialogOptions() {
+		return CodePushApi.getDefaultUpdateDialogOptions();
 	}
 }

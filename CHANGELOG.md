@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.1.3+2
+
+- Fixed the actual bug I was seeing with getCurrentPackage and getPendingPackage.
+
+## 0.1.3+1
+
+- Fixed bug with checkForUpdate and notifyApplicationReady. Apparently CodePush will call the callbacks multiple times.
+
+## 0.1.3
+
+- Added support for the CodePush plugin
+
 ## 0.1.2
 
 - Added support for the Network Information plugin

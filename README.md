@@ -66,6 +66,8 @@ Generally speaking, any interactions with plugins should happen **after** the "d
 	* Fully supported
 	* Connection types are available on ConnectionTypes
 	* Event names are constants in the connection class
+* [Microsoft CodePush](https://github.com/Microsoft/cordova-plugin-code-push)
+	* Basic functionality supported
 
 ## Amazon Ads Specific Notes
 
