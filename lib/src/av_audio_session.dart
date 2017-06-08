@@ -4,24 +4,24 @@ library AVAudioSessionAdapter;
 import 'dart:async';
 import 'package:js/js.dart';
 
-@JS('gr.eworx.AVAudioSessionAdapter')
-class AVAudioSessionAdapter {
+@JS('AVAudioSession')
+class AVAudioSessionApi {
 
-	external void getCategory(Function success);
+	external static void getCategory(Function success);
 
-	external void getCategoryOptions(Function success);
+	external static void getCategoryOptions(Function success);
 
-	external void setCategory(String category, Function success,
+	external static void setCategory(String category, Function success,
 		Function failure);
 
-	external void setCategoryWithOptions(String category, int options,
+	external static void setCategoryWithOptions(String category, int options,
 		Function success, Function failure);
 
-	external void registerRouteChangedCallback(Function success,
+	external static void registerRouteChangedCallback(Function success,
 		Function failure);
 }
 
-@JS('gr.eworx.AVAudioSessionAdapter.Categories')
+@JS('AVAudioSession.Categories')
 class AVAudioSessionCategories {
 	external static String get AMBIENT;
 
@@ -38,7 +38,7 @@ class AVAudioSessionCategories {
 	external static String get MULTI_ROUTE;
 }
 
-@JS('gr.eworx.AVAudioSessionAdapter.CategoryOptions')
+@JS('AVAudioSession.CategoryOptions')
 class AVAudioSessionCategoryOptions {
 	external static int get MIX_WITH_OTHERS;
 
@@ -49,7 +49,7 @@ class AVAudioSessionCategoryOptions {
 	external static int get DEFAULT_TO_SPEAKER;
 }
 
-@JS('gr.eworx.AVAudioSessionAdapter.RouteChangeReason')
+@JS('AVAudioSession.RouteChangeReason')
 class AVAudioSessionRouteChangeReason {
 	external static int get Unknown;
 
@@ -68,19 +68,12 @@ class AVAudioSessionRouteChangeReason {
 	external static int get RouteConfigurationChange;
 }
 
-class AVAudioSessionManager {
-	static AVAudioSessionAdapter _avAudioSessionAdapter;
-
-	static void _doInit() {
-		if (_avAudioSessionAdapter == null) {
-			_avAudioSessionAdapter = new AVAudioSessionAdapter();
-		}
-	}
+class AVAudioSession {
 
 	static Future getCategory() {
-		_doInit();
+
 		Completer c = new Completer();
-		_avAudioSessionAdapter.getCategory(allowInterop((result) {
+		AVAudioSessionApi.getCategory(allowInterop((result) {
 			c.complete(result);
 		}));
 
@@ -88,20 +81,20 @@ class AVAudioSessionManager {
 	}
 
 	static Future getCategoryOptions() {
-		_doInit();
+
 		Completer c = new Completer();
 
-		_avAudioSessionAdapter.getCategoryOptions(allowInterop((result) {
+		AVAudioSessionApi.getCategoryOptions(allowInterop((result) {
 			c.complete(result);
 		}));
 		return c.future;
 	}
 
 	static Future setCategory(String category) {
-		_doInit();
+
 		Completer c = new Completer();
 
-		_avAudioSessionAdapter.setCategory(category, allowInterop((result) {
+		AVAudioSessionApi.setCategory(category, allowInterop((result) {
 			c.complete(result);
 		}), allowInterop((error) {
 			c.completeError(error);
@@ -111,10 +104,10 @@ class AVAudioSessionManager {
 	}
 
 	static Future setCategoryWithOptions(String category, int options) {
-		_doInit();
+
 		Completer c = new Completer();
 
-		_avAudioSessionAdapter.setCategoryWithOptions(
+		AVAudioSessionApi.setCategoryWithOptions(
 			category, options, allowInterop((result) {
 			c.complete(result);
 		}), allowInterop((error) {
@@ -125,10 +118,9 @@ class AVAudioSessionManager {
 	}
 
 	static Future registerRouteChangeCallback() {
-		_doInit();
 		Completer c = new Completer();
 
-		_avAudioSessionAdapter.registerRouteChangedCallback(
+		AVAudioSessionApi.registerRouteChangedCallback(
 			allowInterop((result) {
 				c.complete(result);
 			}), allowInterop((error) {

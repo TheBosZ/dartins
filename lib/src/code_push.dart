@@ -25,7 +25,7 @@ class CodePush {
 		Completer c = new Completer();
 		CodePushApi.getCurrentPackage(allowInterop((result, [extra = null]) {
 			Map obj = JSON.decode(context['JSON'].callMethod('stringify', [result]));
-			if (obj.containsKey('o')) {
+			if (obj != null && obj.containsKey('o')) {
 				obj = obj['o'];
 			}
 			c.complete(obj);
@@ -40,7 +40,7 @@ class CodePush {
 		Completer c = new Completer();
 		CodePushApi.getPendingPackage(allowInterop((result, [extra = null]) {
 			Map obj = JSON.decode(context['JSON'].callMethod('stringify', [result]));
-			if (obj.containsKey('o')) {
+			if (obj != null && obj.containsKey('o')) {
 				obj = obj['o'];
 			}
 			c.complete(obj);

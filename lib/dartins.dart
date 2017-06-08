@@ -13,5 +13,5 @@ export 'src/statusbar.dart';
 export 'src/facebook.dart';
 export 'src/app_settings.dart';
 export 'src/network_information.dart';
-export 'src/av_audio_session_adapter.dart';
+export 'src/av_audio_session.dart';
 export 'src/code_push.dart';
