@@ -68,6 +68,8 @@ Generally speaking, any interactions with plugins should happen **after** the "d
 	* Event names are constants in the connection class
 * [Microsoft CodePush](https://github.com/Microsoft/cordova-plugin-code-push)
 	* Basic functionality supported
+* [iOS AVAudioSession](https://github.com/TheBosZ/cordova-plugin-avaudiosession)
+	* Fully supported
 
 ## Amazon Ads Specific Notes
 

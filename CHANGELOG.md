@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.4
+
+- Switch AVAudioSession plugin to use a new fork
+- Bug fixes for CodePush
+
 ## 0.1.3+2
 
 - Fixed the actual bug I was seeing with getCurrentPackage and getPendingPackage.

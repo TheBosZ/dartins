@@ -20,6 +20,7 @@ class CodePushApi {
 	external static dynamic getDefaultUpdateDialogOptions();
 }
 
+//TODO: Change these into streams since it's not a "success" callback at all, it's a status one
 class CodePush {
 	static Future getCurrentPackage() {
 		Completer c = new Completer();

@@ -1,6 +1,6 @@
 name: dartins
 description: Cordova/Phonegap plugin definitions for use in Dart projects
-version: 0.1.3+2
+version: 0.1.4
 author: Nathan Kerr <nathanker@gmail.com>
 homepage: https://github.com/TheBosZ/dartins
 documentation:
