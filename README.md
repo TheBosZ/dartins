@@ -1,3 +1,7 @@
+**This Repo has moved: https://bitbucket.org/TheBosZ/dartins**
+
+This version will be archived for a while. I will eventually delete it (but not before updating the package on Pub).
+
 # Dartins
 
 [Cordova](https://cordova.apache.org/)/[PhoneGap](http://phonegap.com/) plugin definitions for use in Dart projects.
